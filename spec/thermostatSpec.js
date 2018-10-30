@@ -6,11 +6,23 @@ describe("Thermostat", function() {
   })
 
   it("should have a starting temp of 20", function() {
-    expect(thermostat.temperature).toEqual(20)
+    expect(thermostat.currentTemperature()).toEqual(20)
   });
 
   it("increases the temperature by 1", function() {
-    thermostat.increase(1);
-    expect(thermostat.temperature).toEqual(21)
-  })
+    thermostat.up();
+    expect(thermostat.currentTemperature()).toEqual(21)
+  });
+
+  it("decreases the temperature by 1", function() {
+    thermostat.down();
+    expect(thermostat.currentTemperature()).toEqual(19)
+  });
+
+  it("never decreases below 10", function() {
+    for (var i = 0; i < 11; i++) {
+      thermostat.down();
+    }
+    expect(thermostat.currentTemperature()).toEqual(10)
+  });
 })
