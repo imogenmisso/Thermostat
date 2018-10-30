@@ -26,11 +26,27 @@ describe("Thermostat", function() {
     expect(thermostat.currentTemperature()).toEqual(10)
   });
 
-  it("sets maximum temp to 25 when power saving mode is on", function() {
-      for (var i = 25; i <= 30; i++) {
-      thermostat.isPowerSavingMode();
+  it("has a default power saving mode of on", function() {
+    expect(thermostat.isPowerSavingModeOn()).toBe(true);
+  });
+
+  it("can switch power saving mode off", function() {
+    thermostat.switchPowerSavingModeOff();
+    expect(thermostat.isPowerSavingModeOn()).toBe(false);
+  });
+
+  it("can switch power saving mode off", function() {
+    thermostat.switchPowerSavingModeOff();
+    expect(thermostat.isPowerSavingModeOn()).toBe(false);
+    thermostat.switchPowerSavingModeOn();
+    expect(thermostat.isPowerSavingModeOn()).toBe(true);
+  });
+
+  it("has a maximum temperature of 25 when power saving mode is on", function() {
+    for (var i = 25; i < 30; i++) {
       thermostat.up();
     }
     expect(thermostat.currentTemperature()).toEqual(25)
   });
+
 })
