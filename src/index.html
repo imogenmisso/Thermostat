@@ -3,21 +3,23 @@
 <html lang="en">
 <head>
   <title>Thermostat</title>
+  <link rel="stylesheet" href="usage.css">
 </head>
 <body>
   <div id="displays" >
-    <p id="temperature">Current Temperature:</p>
-    <p id="usage">Usage:</p>
-    <p id="power_saving">Power saving mode is </p>
+    Current temperature:
+  <p id="temperature" class=""></p>
   </div>
   <div id="buttons" >
-    <p><button id="temperature_up">+</button></p>
-    <p><button id="temperature_down">-</button></p>
+    <p><button id="temperature_up">+</button>
+    <button id="temperature_down">-</button></p>
     <p><button id="temperature_reset">Reset</button></p>
-    <p>Power saving mode:</p>
-    <p><button id="powersaving_on">On</button></p>
-    <p><button id="powersaving_off">Off</button></p>
+    <p id="power_saving">Power saving mode is ON</p>
+    <p><button id="powersaving_on">On</button>
+    <button id="powersaving_off">Off</button></p>
   </div>
   <script src="thermostat.js"></script>
+  <script src="jquery-3.3.1.js"></script>
+  <script src="interface.js"></script>
 </body>
 </html>
