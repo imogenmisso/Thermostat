@@ -57,4 +57,28 @@ describe("Thermostat", function() {
     expect(thermostat.currentTemperature()).toEqual(32)
   });
 
+  it("resets the temp to 20 when you click reset", function() {
+    thermostat.up();
+    thermostat.resetTemp();
+    expect(thermostat.currentTemperature()).toEqual(20)
+  });
+
+  it("returns high-usage when temp > 25", function() {
+    for (var i = 0; i < 30; i++) {
+    thermostat.up();
+  }
+    expect(thermostat.currentUsage()).toEqual('high-usage')
+  });
+
+  it("returns medium-usage when temp < 25", function() {
+    expect(thermostat.currentUsage()).toEqual('medium-usage')
+  });
+
+  it("returns low-usage when temp < 18", function() {
+    for (var i = 0; i < 3; i++) {
+    thermostat.down();
+  }
+    expect(thermostat.currentUsage()).toEqual('low-usage')
+  })
+
 })

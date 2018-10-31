@@ -1,10 +1,12 @@
 'use strict';
 function Thermostat() {
-  this.temperature = 20
+  this.DEFAULT_TEMPERATURE = 20
+  this.temperature = this.DEFAULT_TEMPERATURE
   this.minimumTemperature = 10
   this.maximumTemperaturePSMOn = 25
   this.maximumTemperaturePSMOff = 32
   this.powerSavingMode = true
+  this.lowUsageTemp = 18
 };
 
 Thermostat.prototype.currentTemperature = function() {
@@ -24,6 +26,21 @@ Thermostat.prototype.down = function() {
   }
   this.temperature -= 1;
 }
+
+Thermostat.prototype.resetTemp = function() {
+  this.temperature = this.DEFAULT_TEMPERATURE;
+}
+
+Thermostat.prototype.currentUsage = function() {
+  if (this.temperature < this.lowUsageTemp) {
+    return 'low-usage';
+  }
+  if ((this.temperature < this.maximumTemperaturePSMOn) && (this.temperature >= this.lowUsageTemp)) {
+    return 'medium-usage';
+  }
+  return 'high-usage';
+};
+
 
 Thermostat.prototype.isMinimumTemperature = function () {
   return this.temperature === this.minimumTemperature;
