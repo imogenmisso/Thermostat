@@ -1,7 +1,7 @@
 $(document).ready(function() {
   var thermostat = new Thermostat();
   $.get('http://localhost:4567/', function(data) {
-    $('#temperature').text(thermostat.temperature);
+    $('#temperature').text(data);
   });
   updateTemperature();
 
