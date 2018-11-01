@@ -7,8 +7,13 @@
 </head>
 <body>
   <div id="displays" >
-    Current temperature:
-  <p id="temperature" class=""></p>
+    <form id="city">
+      Enter a city:
+      <input id="user-city" type="text"></input>
+      <input type="submit" value="Enter"></input>
+    </form>
+  <p>  Current temperature: <span
+  id="temperature"></span><span id="centigrade"> &#8451;</span></p>
   </div>
   <div id="buttons" >
     <p><button id="temperature_up">+</button>
