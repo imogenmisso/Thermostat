@@ -1,5 +1,8 @@
 $(document).ready(function() {
   var thermostat = new Thermostat();
+  $.get('http://localhost:4567/', function(data) {
+    $('#temperature').text(thermostat.temperature);
+  });
   updateTemperature();
 
   $('#city').submit(function(event) {
@@ -13,16 +16,19 @@ $(document).ready(function() {
   $('#temperature_up').on('click', function() {
       thermostat.up();
       updateTemperature();
+      saveTemperature();
   })
 
   $('#temperature_down').on('click', function() {
       thermostat.down();
       updateTemperature();
+      saveTemperature();
   })
 
   $('#temperature_reset').on('click', function() {
       thermostat.resetTemp();
       updateTemperature();
+      saveTemperature();
   })
 
   $('#powersaving_on').on('click', function() {
@@ -35,6 +41,10 @@ $(document).ready(function() {
       $('#power_saving').text('Power saving mode is OFF');
   })
 
+  function saveTemperature() {
+    var temperature = thermostat.temperature
+    $.post('http://localhost:4567/?temperature='+temperature)
+  }
   function updateTemperature() {
     $('#temperature').text(thermostat.temperature);
     $('#temperature').attr('class', thermostat.currentUsage());
