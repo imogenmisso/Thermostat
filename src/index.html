@@ -1,22 +1,23 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html id="page" lang="en">
 <head>
   <title>Thermostat</title>
-  <link rel="stylesheet" href="usage.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div id="displays" >
-    <form id="city">
-      Enter a city:
-      <input id="user-city" type="text"></input>
-      <input type="submit" value="Enter"></input>
-    </form>
+        <form id="city">
+          Enter a city:
+          <input id="user-city" type="text"></input>
+          <input id="enter" type="submit" value="Enter"></input>
+        </form>
+  <p> City temperature: <span id="current-temp"></span><span id="centigrade2"> &#8451;</span></p>
   <p>  Current temperature: <span
   id="temperature"></span><span id="centigrade"> &#8451;</span></p>
   </div>
   <div id="buttons" >
-    <p><button id="temperature_up">+</button>
+    <p id="temperature-controls"><button id="temperature_up">+</button>
     <button id="temperature_down">-</button></p>
     <p><button id="temperature_reset">Reset</button></p>
     <p id="power_saving">Power saving mode is ON</p>

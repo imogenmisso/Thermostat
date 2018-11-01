@@ -1,0 +1,88 @@
+#page {
+  background: #abe0df;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  text-align: center;
+  overflow: auto;
+}
+
+#displays {
+  padding-top: 150px;
+  font-family: monospace;
+  font-size: 35px;
+}
+
+#city {
+  font-family: monospace;
+  font-size: 40px;
+}
+
+#user-city {
+  padding: 10px;
+  text-align: center;
+}
+
+#buttons {
+  font-family: monospace;
+}
+
+#temperature_reset {
+  background-color: #ecc170;
+  color: #776e6e
+}
+
+#enter {
+  border-radius: 12px;
+  font-size: 10px;
+  font-family: monospace;
+}
+
+#temperature_up {
+  border-radius: 50%;
+  font-size: 20px;
+  font-family: monospace;
+  background-color: palevioletred;
+  color: aliceblue;
+  text-align: center;
+}
+
+#temperature_down {
+  border-radius: 50%;
+  font-size: 20px;
+  font-family: monospace;
+  background-color: #81a6e8;
+  color: aliceblue;
+}
+
+#temperature_reset {
+  border-radius: 12px;
+  font-size: 15px;
+  font-family: monospace;
+}
+
+#powersaving_on {
+  font-family: monospace;
+  background-color: #8BC34A;;
+  color: aliceblue;
+  border-radius: 10px;
+}
+
+#powersaving_off {
+  font-family: monospace;
+  background-color: cadetblue;;
+  color: aliceblue;
+  border-radius: 10px;
+}
+
+.low-usage {
+  color: green;
+}
+
+.medium-usage {
+  color: orange;
+}
+
+.high-usage {
+  color: red;
+}
