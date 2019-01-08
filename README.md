@@ -10,4 +10,10 @@ Completed in week 5 of Makers. First JavaScript project. Wrote business logic to
 - to run tests
   - `open SpecRunner.html` 
 - to view page
-  - `open index.html`
+  - `open src/index.html`
+
+### Completion 
+
+- all 13 tests passing
+
+
