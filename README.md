@@ -9,4 +9,5 @@ Completed in week 5 of Makers. First JavaScript project. Wrote business logic to
 - `git clone` https://github.com/imogenmisso/Thermostat
 - to run tests
   - `open SpecRunner.html` 
- 
+- to view page
+  - `open index.html`
